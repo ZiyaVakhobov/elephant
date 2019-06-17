@@ -1,0 +1,13 @@
+{
+    "name": "ziya/elephant",
+    "description": "PHP package for OOP coding",
+    "type": "library",
+    "require": {
+        "php": ">=7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "ziya\\Elephant\\": "src"
+        }
+    }
+}
