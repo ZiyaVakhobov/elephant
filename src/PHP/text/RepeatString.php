@@ -1,11 +1,12 @@
 <?php
 
+
 namespace ziya\Elephant\PHP\text;
 
-use ziya\Elephant\PHP\ScalarString;
-use function ucwords;
 
-class UpperFirstWords implements ScalarString
+use ziya\Elephant\PHP\ScalarString;
+
+class RepeatString implements ScalarString
 {
     /**
      * @var string
@@ -13,12 +14,13 @@ class UpperFirstWords implements ScalarString
     private $value;
 
     /**
-     * UpperFirstWords constructor.
+     * RepeatString constructor.
      * @param string $value
+     * @param int $count
      */
-    public function __construct(string $value)
+    public function __construct(string $value, int $count)
     {
-        $this->value = ucwords($value);
+        $this->value = str_repeat($value,$count);
     }
 
     public function __toString(): string

@@ -1,11 +1,13 @@
 <?php
 
+
 namespace ziya\Elephant\PHP\text;
 
-use ziya\Elephant\PHP\ScalarString;
-use function ucwords;
 
-class UpperFirstWords implements ScalarString
+use ziya\Elephant\PHP\ScalarString;
+use function str_shuffle;
+
+class ShuffleString implements ScalarString
 {
     /**
      * @var string
@@ -13,12 +15,12 @@ class UpperFirstWords implements ScalarString
     private $value;
 
     /**
-     * UpperFirstWords constructor.
+     * ShuffleString constructor.
      * @param string $value
      */
     public function __construct(string $value)
     {
-        $this->value = ucwords($value);
+        $this->value = str_shuffle($value);
     }
 
     public function __toString(): string

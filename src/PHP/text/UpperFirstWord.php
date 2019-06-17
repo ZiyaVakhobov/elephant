@@ -1,6 +1,6 @@
 <?php
 
-namespace ziya\elephant\PHP\text;
+namespace ziya\Elephant\PHP\text;
 
 
 use ziya\Elephant\PHP\ScalarString;
