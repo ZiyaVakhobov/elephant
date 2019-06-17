@@ -5,6 +5,7 @@ namespace ziya\Elephant\PHP\text;
 
 
 use ziya\Elephant\PHP\ScalarString;
+use function ltrim;
 
 class LTrim implements ScalarString
 {
@@ -21,7 +22,7 @@ class LTrim implements ScalarString
      */
     public function __construct(string $value, $trimCharList= " \t\n\r\0\x0B")
     {
-        $this->value = \ltrim($value,$trimCharList);
+        $this->value = ltrim($value,$trimCharList);
     }
 
     public function __toString(): string

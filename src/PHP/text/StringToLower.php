@@ -1,24 +1,23 @@
 <?php
 
+
 namespace ziya\elephant\PHP\text;
 
-use ziya\Elephant\PHP\ScalarString;
-use function ucwords;
 
-class UpperFirstWords implements ScalarString
+use ziya\Elephant\PHP\ScalarString;
+use function strtolower;
+
+class StringToLower implements ScalarString
 {
+
     /**
      * @var string
      */
     private $value;
 
-    /**
-     * UpperFirstWords constructor.
-     * @param string $value
-     */
     public function __construct(string $value)
     {
-        $this->value = ucwords($value);
+        $this->value = strtolower($value);
     }
 
     public function __toString(): string

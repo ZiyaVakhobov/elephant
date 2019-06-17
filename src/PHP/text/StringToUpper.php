@@ -1,13 +1,13 @@
 <?php
 
 
-namespace ziya\Elephant\PHP\text;
+namespace ziya\elephant\PHP\text;
 
 
 use ziya\Elephant\PHP\ScalarString;
-use function rtrim;
+use function strtoupper;
 
-class RTrim implements ScalarString
+class StringToUpper implements ScalarString
 {
     /**
      * @var string
@@ -15,13 +15,12 @@ class RTrim implements ScalarString
     private $value;
 
     /**
-     * Trim constructor.
+     * StringToUpper constructor.
      * @param string $value
-     * @param string $trimCharList
      */
-    public function __construct(string $value, $trimCharList = " \t\n\r\0\x0B")
+    public function __construct(string $value)
     {
-        $this->value = rtrim($value, $trimCharList);
+        $this->value = strtoupper($value);
     }
 
     public function __toString(): string

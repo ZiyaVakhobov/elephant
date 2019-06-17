@@ -1,10 +1,10 @@
 <?php
 
-
 namespace ziya\Elephant\PHP\text;
 
 
 use ziya\Elephant\PHP\ScalarString;
+use function trim;
 
 class Trim implements ScalarString
 {
@@ -20,7 +20,7 @@ class Trim implements ScalarString
      */
     public function __construct(string $value, $trimCharList= " \t\n\r\0\x0B")
     {
-        $this->value = \trim($value,$trimCharList);
+        $this->value = trim($value,$trimCharList);
     }
 
     public function __toString(): string
