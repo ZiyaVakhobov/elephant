@@ -9,11 +9,6 @@ use function ltrim;
 
 class LTrim extends BaseString implements ScalarString
 {
-    /**
-     * @var string
-     */
-    private $value;
-
 
     /**
      * Trim constructor.
@@ -23,16 +18,5 @@ class LTrim extends BaseString implements ScalarString
     public function __construct(string $value, $trimCharList= " \t\n\r\0\x0B")
     {
         $this->value = ltrim($value,$trimCharList);
-        $this->count = strlen($this->value);
-    }
-
-    public function __toString(): string
-    {
-        return $this->value;
-    }
-
-    public function value(): string
-    {
-        return $this->value;
     }
 }

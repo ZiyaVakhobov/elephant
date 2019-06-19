@@ -8,10 +8,6 @@ use ziya\Elephant\PHP\ScalarString;
 
 class Sha1File extends BaseString implements ScalarString
 {
-    /**
-     * @var string
-     */
-    private $value;
 
     /**
      * Sha1 constructor.
@@ -21,16 +17,6 @@ class Sha1File extends BaseString implements ScalarString
     public function __construct(string $value, bool $raw_output = false)
     {
         $this->value = sha1_file($value,$raw_output);
-        $this->count = strlen($this->value);
     }
 
-    public function __toString(): string
-    {
-        return $this->value;
-    }
-
-    public function value(): string
-    {
-        return $this->value;
-    }
 }

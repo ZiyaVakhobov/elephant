@@ -9,10 +9,6 @@ use function str_replace;
 
 class ReplaceString extends BaseString implements ScalarString
 {
-    /**
-     * @var string
-     */
-    private $value;
 
     /**
      * ReplaceString constructor.
@@ -24,16 +20,5 @@ class ReplaceString extends BaseString implements ScalarString
     public function __construct(string $value, array $replaceFrom, array $replaceTo, &$count=0)
     {
         $this->value = str_replace($replaceFrom,$replaceTo,$value, $count);
-        $this->count = strlen($this->value);
-    }
-
-    public function __toString(): string
-    {
-        return $this->value();
-    }
-
-    public function value(): string
-    {
-        return $this->value;
     }
 }

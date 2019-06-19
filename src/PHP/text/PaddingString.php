@@ -9,11 +9,6 @@ use ziya\Elephant\PHP\ScalarString;
 class PaddingString extends BaseString implements ScalarString
 {
     /**
-     * @var string
-     */
-    private $value;
-
-    /**
      * PaddingString constructor.
      * @param string $value
      * @param int $pad_length
@@ -23,16 +18,5 @@ class PaddingString extends BaseString implements ScalarString
     public function __construct(string $value, int $pad_length, string $pad_string = ' ', int $pad_type = STR_PAD_RIGHT)
     {
         $this->value = str_pad($value, $pad_length, $pad_string, $pad_type);
-        $this->count = strlen($this->value);
-    }
-
-    public function __toString(): string
-    {
-        return $this->value;
-    }
-
-    public function value(): string
-    {
-        return $this->value;
     }
 }

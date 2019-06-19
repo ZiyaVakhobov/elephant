@@ -9,10 +9,6 @@ use function strtoupper;
 
 class StringToUpper extends BaseString implements ScalarString
 {
-    /**
-     * @var string
-     */
-    private $value;
 
     /**
      * StringToUpper constructor.
@@ -21,16 +17,5 @@ class StringToUpper extends BaseString implements ScalarString
     public function __construct(string $value)
     {
         $this->value = strtoupper($value);
-        $this->count = strlen($this->value);
-    }
-
-    public function __toString(): string
-    {
-        return $this->value;
-    }
-
-    public function value(): string
-    {
-        return $this->value;
     }
 }

@@ -8,10 +8,6 @@ use function ucfirst;
 
 class UpperFirstWord extends BaseString implements ScalarString
 {
-    /**
-     * @var string
-     */
-    private $value;
 
     /**
      * UpperFirstWords constructor.
@@ -23,13 +19,4 @@ class UpperFirstWord extends BaseString implements ScalarString
         $this->count = strlen($this->value);
     }
 
-    public function __toString(): string
-    {
-        return $this->value;
-    }
-
-    public function value(): string
-    {
-        return $this->value;
-    }
 }

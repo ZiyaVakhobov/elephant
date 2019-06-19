@@ -9,10 +9,6 @@ use function str_shuffle;
 
 class ShuffleString extends BaseString implements ScalarString
 {
-    /**
-     * @var string
-     */
-    private $value;
 
     /**
      * ShuffleString constructor.
@@ -21,16 +17,6 @@ class ShuffleString extends BaseString implements ScalarString
     public function __construct(string $value)
     {
         $this->value = str_shuffle($value);
-        $this->count = strlen($this->value);
     }
 
-    public function __toString(): string
-    {
-        return $this->value;
-    }
-
-    public function value(): string
-    {
-        return $this->value;
-    }
 }

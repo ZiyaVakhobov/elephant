@@ -8,10 +8,6 @@ use ziya\Elephant\PHP\ScalarString;
 
 class RepeatString extends BaseString implements ScalarString
 {
-    /**
-     * @var string
-     */
-    private $value;
 
     /**
      * RepeatString constructor.
@@ -21,16 +17,5 @@ class RepeatString extends BaseString implements ScalarString
     public function __construct(string $value, int $count)
     {
         $this->value = str_repeat($value,$count);
-        $this->count = strlen($this->value);
-    }
-
-    public function __toString(): string
-    {
-        return $this->value;
-    }
-
-    public function value(): string
-    {
-        return $this->value;
     }
 }

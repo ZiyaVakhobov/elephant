@@ -8,10 +8,6 @@ use function trim;
 
 class Trim extends BaseString implements ScalarString
 {
-    /**
-     * @var string
-     */
-    private $value;
 
     /**
      * Trim constructor.
@@ -24,13 +20,4 @@ class Trim extends BaseString implements ScalarString
         $this->count = strlen($this->value);
     }
 
-    public function __toString(): string
-    {
-        return $this->value;
-    }
-
-    public function value(): string
-    {
-        return $this->value;
-    }
 }
