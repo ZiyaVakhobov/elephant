@@ -6,7 +6,7 @@ namespace ziya\Elephant\PHP\text;
 use ziya\Elephant\PHP\ScalarString;
 use function trim;
 
-class Trim implements ScalarString
+class Trim extends BaseString implements ScalarString
 {
     /**
      * @var string
@@ -21,6 +21,7 @@ class Trim implements ScalarString
     public function __construct(string $value, $trimCharList= " \t\n\r\0\x0B")
     {
         $this->value = trim($value,$trimCharList);
+        $this->count = strlen($this->value);
     }
 
     public function __toString(): string

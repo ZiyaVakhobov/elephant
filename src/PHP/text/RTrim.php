@@ -7,7 +7,7 @@ namespace ziya\Elephant\PHP\text;
 use ziya\Elephant\PHP\ScalarString;
 use function rtrim;
 
-class RTrim implements ScalarString
+class RTrim extends BaseString implements ScalarString
 {
     /**
      * @var string
@@ -22,6 +22,7 @@ class RTrim implements ScalarString
     public function __construct(string $value, $trimCharList = " \t\n\r\0\x0B")
     {
         $this->value = rtrim($value, $trimCharList);
+        $this->count = strlen($this->value);
     }
 
     public function __toString(): string

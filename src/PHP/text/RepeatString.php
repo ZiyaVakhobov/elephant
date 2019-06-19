@@ -6,7 +6,7 @@ namespace ziya\Elephant\PHP\text;
 
 use ziya\Elephant\PHP\ScalarString;
 
-class RepeatString implements ScalarString
+class RepeatString extends BaseString implements ScalarString
 {
     /**
      * @var string
@@ -21,6 +21,7 @@ class RepeatString implements ScalarString
     public function __construct(string $value, int $count)
     {
         $this->value = str_repeat($value,$count);
+        $this->count = strlen($this->value);
     }
 
     public function __toString(): string

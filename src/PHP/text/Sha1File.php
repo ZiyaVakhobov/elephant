@@ -5,19 +5,22 @@ namespace ziya\Elephant\PHP\text;
 
 
 use ziya\Elephant\PHP\ScalarString;
-use function strtolower;
 
-class StringToLower extends BaseString implements ScalarString
+class Sha1File extends BaseString implements ScalarString
 {
-
     /**
      * @var string
      */
     private $value;
 
-    public function __construct(string $value)
+    /**
+     * Sha1 constructor.
+     * @param string $value
+     * @param bool $raw_output
+     */
+    public function __construct(string $value, bool $raw_output = false)
     {
-        $this->value = strtolower($value);
+        $this->value = sha1_file($value,$raw_output);
         $this->count = strlen($this->value);
     }
 

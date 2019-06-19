@@ -6,7 +6,7 @@ namespace ziya\Elephant\PHP\text;
 use ziya\Elephant\PHP\ScalarString;
 use function ucfirst;
 
-class UpperFirstWord implements ScalarString
+class UpperFirstWord extends BaseString implements ScalarString
 {
     /**
      * @var string
@@ -20,6 +20,7 @@ class UpperFirstWord implements ScalarString
     public function __construct(string $value)
     {
         $this->value = ucfirst($value);
+        $this->count = strlen($this->value);
     }
 
     public function __toString(): string

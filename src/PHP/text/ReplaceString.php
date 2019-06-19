@@ -7,7 +7,7 @@ namespace ziya\Elephant\PHP\text;
 use ziya\Elephant\PHP\ScalarString;
 use function str_replace;
 
-class ReplaceString implements ScalarString
+class ReplaceString extends BaseString implements ScalarString
 {
     /**
      * @var string
@@ -23,8 +23,8 @@ class ReplaceString implements ScalarString
      */
     public function __construct(string $value, array $replaceFrom, array $replaceTo, &$count=0)
     {
-
         $this->value = str_replace($replaceFrom,$replaceTo,$value, $count);
+        $this->count = strlen($this->value);
     }
 
     public function __toString(): string

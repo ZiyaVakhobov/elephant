@@ -7,7 +7,7 @@ namespace ziya\Elephant\PHP\text;
 use ziya\Elephant\PHP\ScalarString;
 use function strtoupper;
 
-class StringToUpper implements ScalarString
+class StringToUpper extends BaseString implements ScalarString
 {
     /**
      * @var string
@@ -21,6 +21,7 @@ class StringToUpper implements ScalarString
     public function __construct(string $value)
     {
         $this->value = strtoupper($value);
+        $this->count = strlen($this->value);
     }
 
     public function __toString(): string

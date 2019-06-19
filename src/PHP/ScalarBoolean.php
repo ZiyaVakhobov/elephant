@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ziya\elephant\PHP;
+namespace ziya\Elephant\PHP;
 
 
 interface ScalarBoolean

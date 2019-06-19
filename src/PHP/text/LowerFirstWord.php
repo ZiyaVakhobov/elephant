@@ -7,7 +7,7 @@ namespace ziya\Elephant\PHP\text;
 use function lcfirst;
 use ziya\Elephant\PHP\ScalarString;
 
-class LowerFirstWord implements ScalarString
+class LowerFirstWord extends BaseString implements ScalarString
 {
     /**
      * @var string
@@ -17,10 +17,12 @@ class LowerFirstWord implements ScalarString
     /**
      * UpperFirstWords constructor.
      * @param string $value
+     *
      */
     public function __construct(string $value)
     {
         $this->value = lcfirst($value);
+        $this->count = strlen($this->value);
     }
 
     public function __toString(): string

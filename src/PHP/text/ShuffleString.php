@@ -7,7 +7,7 @@ namespace ziya\Elephant\PHP\text;
 use ziya\Elephant\PHP\ScalarString;
 use function str_shuffle;
 
-class ShuffleString implements ScalarString
+class ShuffleString extends BaseString implements ScalarString
 {
     /**
      * @var string
@@ -21,6 +21,7 @@ class ShuffleString implements ScalarString
     public function __construct(string $value)
     {
         $this->value = str_shuffle($value);
+        $this->count = strlen($this->value);
     }
 
     public function __toString(): string

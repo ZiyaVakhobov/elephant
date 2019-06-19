@@ -5,24 +5,24 @@ namespace ziya\Elephant\PHP\text;
 
 
 use ziya\Elephant\PHP\ScalarString;
-use function ltrim;
 
-class LTrim extends BaseString implements ScalarString
+class PaddingString extends BaseString implements ScalarString
 {
     /**
      * @var string
      */
     private $value;
 
-
     /**
-     * Trim constructor.
+     * PaddingString constructor.
      * @param string $value
-     * @param string $trimCharList
+     * @param int $pad_length
+     * @param string $pad_string
+     * @param int $pad_type
      */
-    public function __construct(string $value, $trimCharList= " \t\n\r\0\x0B")
+    public function __construct(string $value, int $pad_length, string $pad_string = ' ', int $pad_type = STR_PAD_RIGHT)
     {
-        $this->value = ltrim($value,$trimCharList);
+        $this->value = str_pad($value, $pad_length, $pad_string, $pad_type);
         $this->count = strlen($this->value);
     }
 
