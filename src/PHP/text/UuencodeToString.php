@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ziya\elephant\PHP\text;
+namespace ziya\Elephant\PHP\text;
 
 
 class UuencodeToString
